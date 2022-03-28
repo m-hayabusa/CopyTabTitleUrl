@@ -274,21 +274,26 @@ function createFormatText(command, tabs) {
     
     if (command.checkbox__others_extension) {
       // Basic
+      keyset['${decodedUrl}']  = decodeURL(keyset['${url}'], true, true);
       keyset['${text}']     = isSingle && command.selectionText || tab.title;
       keyset['${selectedText}']  = isSingle && command.selectionText || '';
       keyset['${linkText}'] = isSingle && command.linkText || tab.title;
       keyset['${linkUrl}']  = isSingle && command.linkUrl || tab.url;
       keyset['${linkUrl}']  = decodeURL(keyset['${linkUrl}'], isDecode, isPunycode);
+      keyset['${decodedLinkUrl}']  = decodeURL(keyset['${linkUrl}'], true, true);
       keyset['${link}']     = keyset['${linkUrl}'];
       keyset['${src}']      = isSingle && command.srcUrl || tab.url;
       keyset['${src}']      = decodeURL(keyset['${src}'], isDecode, isPunycode);
+      keyset['${decodedSrc}']    = decodeURL(keyset['${src}'], true, true);
       
       keyset['${linkSelectionTitle}']   = isSingle && (command.linkText || command.selectionText) || tab.title;
       keyset['${selectionLinkTitle}']   = isSingle && (command.selectionText || command.linkText) || tab.title;
       keyset['${linkSrcUrl}']    = isSingle && (command.linkUrl || command.srcUrl) || tab.url;
       keyset['${linkSrcUrl}']    = decodeURL(keyset['${linkSrcUrl}'], isDecode, isPunycode);
+      keyset['${decodedLinkSrcUrl}']    = decodeURL(keyset['${linkSrcUrl}'], true, true);
       keyset['${srcLinkUrl}']    = isSingle && (command.srcUrl || command.linkUrl) || tab.url;
       keyset['${srcLinkUrl}']    = decodeURL(keyset['${srcLinkUrl}'], isDecode, isPunycode);
+      keyset['${decodedSrcLinkUrl}']    = decodeURL(keyset['${srcLinkUrl}'], true, true);
       
       keyset['${index}']    = tab.index;
       keyset['${id}']       = tab.id;
