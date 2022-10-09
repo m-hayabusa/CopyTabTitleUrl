@@ -274,6 +274,7 @@ function createFormatText(command, tabs) {
     
     if (command.checkbox__others_extension) {
       // Basic
+      keyset['${escapedTitle}'] = tab.title.replaceAll('[','［').replaceAll(']','］');
       keyset['${decodedUrl}']  = decodeURL(keyset['${url}'], true, true);
       keyset['${text}']     = isSingle && command.selectionText || tab.title;
       keyset['${selectedText}']  = isSingle && command.selectionText || '';
